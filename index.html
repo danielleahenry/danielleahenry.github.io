@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danielle's Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="images/favicon.ico"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=SF+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/eefe2a6961.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="nav-bar">
+        <div class="hamburger" onclick="toggleNav()">
+          <span class="material-symbols-outlined"> menu </span>
+        </div>
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#portfolio">portfolio</a>
+        <a href="#contact">contact</a>
+      </nav>
+
+      <section id="home">
+        <h1><span id="hmni">Hello, my name is </span></h1>
+        <h1><span id="daniellehenry">Danielle Henry</span></h1>
+        <h2 class="ima">I'm a <span id="role" class="typing"></span></h2>
+        <div class="social-icons">
+          <a href="https://github.com/danielleahenry" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/danielleahenry/" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="mailto:danielleahenry@yahoo.com">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              I'm a developer passionate about using technology to solve
+              problems and create positive change. With a focus on
+              <span class="highlight">solving real-world problems</span>, my
+              goal is to make technology more accessible and impactful for
+              everyone.
+            </p>
+            <p>
+              Currently, I'm a rising third-year honors student at Kennesaw State
+              University pursuing a
+              <span class="highlight"
+                >Bachelor of Science in Computer Science</span
+              >, with a concentration in Artificial Intelligence. When I’m not
+              working in the honors office or tutoring calculus students, I’m
+              usually working on personal projects, attending campus club
+              meetings, or learning about the latest technology advancements.
+            </p>
+            <p>
+              I like to spend my free time traveling, enjoying nature, and
+              enjoying different forms of art.
+            </p>
+          </div>
+          <div class="about-image">
+            <div class="image-circle">
+              <img
+                src="images/headshot.png"
+                alt="Danielle's Picture"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio">
+        <div class="top-transition-circle"></div>
+
+        <h1 id="portfolio-title">I've been working on...</h1>
+        <div class="projects">
+          <div class="project-container">
+            <a
+              href="https://danielleahenry.github.io/honors_chatbot/"
+              target="_blank"
+            >
+              <div class="project-info">
+                <h1 class="project-title">
+                  Honors Chatbot<span class="material-symbols-outlined icon"
+                    >north_east</span
+                  >
+                </h1>
+                <p class="project-description">
+                  Hooticus is a virtual assistant designed to improve student
+                  engagement by providing quick, helpful answers to common
+                  questions, simplifying access to important information about
+                  academic programs, events, and resources. While working as an
+                  Honors intern, I was inspired to create this chatbot using
+                  <b>Node.js, Express.js, OpenAI's API, HTML, and CSS</b> to
+                  combine my passion for computer science with my commitment to
+                  helping honors students.
+                </p>
+              </div>
+              <img
+                src="images/chatbot.png"
+                alt="chatbot-logo"
+              />
+            </a>
+          </div>
+
+          <div class="project-container">
+            <a href="https://danielleahenry.github.io/auri/" target="_blank">
+              <div class="project-info">
+                <h1 class="project-title">
+                  iPod Revamp<span class="material-symbols-outlined icon"
+                    >north_east</span
+                  >
+                </h1>
+                <p class="project-description">
+                  Auri is a voice-controlled music player inspired by the
+                  classic iPod, reimagined for Gen Z. Built for ColorStack’s Y2K
+                  Rewind hackathon, this demo lets users play music with their
+                  voice, customize the interface, and enjoy an accessible
+                  listening experience. I collaborated with my team to develop
+                  this demo using <b>HTML, CSS, JavaScript, Node.js, Express.js</b>,
+                  and the <b>Deezer API</b>. We also integrated speech recognition and
+                  to create a fully interactive experience for all users.
+                </p>
+              </div>
+              <img
+                src="images/auri.png"
+                alt="auri-logo"
+              />
+            </a>
+          </div>
+
+          <div class="project-container">
+            <a
+              href="https://drive.google.com/file/d/1M60GDl9ufNikIc_ettNLVT0dCp11wY4P/view"
+              target="_blank"
+            >
+              <div class="project-info">
+                <h1 class="project-title">
+                  Screen Time Management App<span
+                    class="material-symbols-outlined icon"
+                    >north_east</span
+                  >
+                </h1>
+                <p class="project-description">
+                  Proxima is a screen time management app designed to encourage
+                  healthier digital habits. For KSU’s Apps for Wellbeing
+                  Hackathon, our team developed the concept of using a mobile
+                  app to support wellbeing by helping users reduce screen time.
+                  We used <b>Mendix</b> to build the app, focusing on AI-generated
+                  activity suggestions, behavioral nudges, and progress
+                  tracking. The app also includes goal setting and a progress
+                  tracker to help users stay motivated.
+                </p>
+              </div>
+              <img
+                src="images/proxima.png"
+                alt="proxima-logo"
+              />
+            </a>
+          </div>
+
+          <div class="project-container">
+            <a
+              href="https://github.com/danielleahenry/sales-forecasting-demo"
+              target="_blank"
+            >
+              <div class="project-info">
+                <h1 class="project-title">
+                  Sales Data Automation Tool<span
+                    class="material-symbols-outlined icon"
+                    >north_east</span
+                  >
+                </h1>
+                <p class="project-description">
+                  The Sales Data Automation Tool uses machine learning to
+                  automate the analysis and prediction of sales outcomes, making
+                  it easier for users to process data and make data-driven
+                  decisions. I created this tool using
+                  <b>Python, Pandas, Upgini, and CatBoost</b> to enhance my
+                  skills while offering valuable insights into sales trends and
+                  forecasts to improve strategies and performance.
+                </p>
+              </div>
+              <img
+                src="images/salesdemo.png"
+                alt="salesdata-logo"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="bottom-transition-circle"></div>
+      </section>
+
+      <section id="contact">
+        <h1 id="contact-title">
+          Don't be shy, say <span id="greeting-text"></span
+          ><span class="contactBlinkingCaret"></span>
+        </h1>
+        <p>
+          Feel free to reach out, whether it’s a question or just to say hi.
+          I’ll get back to you as soon as I can!
+        </p>
+        <a href="mailto:danielleahenry@yahoo.com" class="contact-button">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </section>
+
+      <section id="license">
+        <p class="license-text">
+          <i>© Danielle Henry 2025 | Created using HTML, CSS, and JavaScript</i>
+        </p>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
