@@ -19,18 +19,19 @@ function typeRole() {
                 showCaret(true);  // start blinking caret immediately after typing is finished
                 setTimeout(() => {
                     deleteRole(roleText);
-                }, 2000);  // wait
+                }, 1500);  // wait
             }, 500);  // shorter wait before showing the blinking caret
         }
     }, 150);  // speed of typing effect
 }
 
 function deleteRole(roleText) {
+    showCaret(false);
     let index = roleText.length;
     const deletingInterval = setInterval(() => {
-        roleElement.textContent = roleText.slice(0, index);
         index--;
-        if (index < 0) {
+        roleElement.textContent = roleText.slice(0, index);
+        if (index <= 0) {
             clearInterval(deletingInterval);
             currentRole = (currentRole + 1) % roles.length;
             setTimeout(() => {
@@ -81,6 +82,13 @@ function toggleNav() {
   navBar.classList.toggle('open');
 }
 
+// close menu when a link is clicked
+document.querySelectorAll('.nav-bar a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-bar').classList.remove('open');
+  });
+});
+
 // adjusts for about section
 window.addEventListener("scroll", function() {
   const aboutSection = document.getElementById("about");
@@ -98,24 +106,6 @@ window.addEventListener("scroll", function() {
   } else {
     aboutContent.classList.remove("visible");
   }
-});
-
-window.addEventListener("scroll", function() {
-  const portfolioSection = document.getElementById("portfolio");
-  const portfolioContent = portfolioSection.querySelectorAll(".project-container");
-  
-  portfolioContent.forEach((project) => {
-    const projectPosition = project.getBoundingClientRect();
-    const sectionHeight = project.offsetHeight;
-    const sectionTop = projectPosition.top;
-    const sectionVisiblePercentage = (window.innerHeight - sectionTop) / sectionHeight;
-
-    if (sectionVisiblePercentage >= 0.3) {
-      project.classList.add("visible");
-    } else {
-      project.classList.remove("visible");
-    }
-  });
 });
 
 window.addEventListener("scroll", function() {
@@ -212,38 +202,33 @@ let currentGreeting = 0;
 const greetingElement = document.getElementById("greeting-text");
 
 function typeGreeting() {
-    greetingElement.textContent = ""; // clear previous greeting
-    let index = 0;
+  greetingElement.textContent = "";
+  let index = 0;
+  showContactCaret(false); // solid caret while typing
 
-    // make caret solid during typing (no blinking)
-    const caret = document.querySelector(".contactBlinkingCaret");
-    caret.style.visibility = "visible";
-    caret.style.animation = "none";
-
-    const typingInterval = setInterval(() => {
-        greetingElement.textContent += greetings[currentGreeting].charAt(index);
-        index++;
-
-        if (index === greetings[currentGreeting].length) {
-            clearInterval(typingInterval);
-            setTimeout(() => {
-                // after typing, start blinking caret
-                showContactCaret(true);  // start blinking caret
-                setTimeout(() => {
-                    deleteGreeting();
-                }, 2000);  // pause
-            }, 500); 
-        }
-    }, 150);  // speed
+  const typingInterval = setInterval(() => {
+    greetingElement.textContent += greetings[currentGreeting].charAt(index);
+    index++;
+    if (index === greetings[currentGreeting].length) {
+      clearInterval(typingInterval);
+      setTimeout(() => {
+        showContactCaret(true); // blink after done
+        setTimeout(() => {
+          deleteGreeting();
+        }, 1500);
+      }, 500);
+    }
+  }, 150);
 }
 
 function deleteGreeting() {
+    showContactCaret(false);
     let greetingText = greetings[currentGreeting];
     let index = greetingText.length;
     const deletingInterval = setInterval(() => {
-        greetingElement.textContent = greetingText.slice(0, index);
         index--;
-        if (index < 0) {
+        greetingElement.textContent = greetingText.slice(0, index);
+        if (index <= 0) {
             clearInterval(deletingInterval);
             currentGreeting = (currentGreeting + 1) % greetings.length; // cycle through greetings
             setTimeout(() => {
@@ -254,12 +239,11 @@ function deleteGreeting() {
 }
 
 function showContactCaret(isVisible) {
-    const caret = document.querySelector(".contactBlinkingCaret");
-    if (isVisible) {
-        caret.style.animation = "contactBlinkCaret 1s step-end infinite";  // start blinking
-    } else {
-        caret.style.animation = "none";  // stop blinking, keep caret solid
-    }
+  if (isVisible) {
+    greetingElement.classList.add("blinkingCaret");
+  } else {
+    greetingElement.classList.remove("blinkingCaret");
+  }
 }
 
 typeGreeting();  // start typing the first greeting
